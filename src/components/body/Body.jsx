@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext, useEffect } from "react";
 import Home from "../home/Home";
 import Filter from "../filter/Filter";
 import { popupContext } from "../../context/PopupContext";
