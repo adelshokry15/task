@@ -1,13 +1,151 @@
-body {
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+* {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  scroll-behavior: smooth;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+}
+
+:root {
+  --accent-color: #53acff;
+  --orange-color: #d94111;
+  --green-color: #118f4b;
+  --green-color: #118f4b;
+  --main-bg: #202020;
+  --second-bg: #181818;
+  --third-bg: #313131;
+}
+
+body {
+  background-color: var(--main-bg);
+  color: white;
+  font-family: "Poppins", sans-serif;
+}
+
+.sidebar:hover .logo {
+  width: 124px;
+  height: 55px;
+}
+.pill {
+  fill: red !important;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #313131;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #767676;
+  border-radius: 3px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #53acff;
+}
+input[type="radio"] {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 12px;
+  height: 12px;
+  background-color: var(--third-bg);
+  border-radius: 50%;
+  position: relative;
+}
+input[type="radio"]::after {
+  content: "";
+  position: absolute;
+  width: 60%;
+  height: 60%;
+  border-radius: 50%;
+  background-color: var(--second-bg);
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+input[type="radio"]:checked::after {
+  background-color: var(--accent-color);
+}
+
+.wheel-picker {
+  overflow: hidden;
+}
+
+.wheel {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 150px; /* Adjust the height as needed */
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.option {
+  padding: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.option:hover {
+  background-color: #f0f0f0;
+}
+
+.selected {
+  background-color: #007bff;
+  color: #fff;
+}
+
+@layer utilities {
+  .shadow-custom {
+    --tw-shadow: 10px 4px 21.1px 0 rgba(0, 0, 0, 0.38);
+    box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000),
+      var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+  }
+}
+
+.sidebar ul li:hover p {
+  opacity: 1;
+  transition: all 0.5s;
+  box-shadow: 0 0 10px 10px #19334e;
+  background-color: #19334e;
+  color: white;
+}
+.sidebar:hover .version {
+  display: block;
+  margin-top: 2rem;
+}
+.sidebar:hover .info {
+  opacity: 1;
+}
+.sidebar:hover .profile {
+  padding-left: 16px;
+  transition: padding-left 0.3s;
+}
+.active1,
+.active2 {
+  background-color: var(--accent-color);
+  color: white;
 }
