@@ -4,7 +4,7 @@ import { IoSearch } from "react-icons/io5";
 import { popupContext } from "../../context/PopupContext";
 
 const SearchSection = () => {
-  const { opened, setOpened } = useContext(popupContext);
+  const { setOpened } = useContext(popupContext);
 
   return (
     <>

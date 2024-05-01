@@ -1,5 +1,4 @@
-import React, { useContext, useRef, useState } from "react";
-import { data } from "./../../data/data";
+import React, { useContext, useState } from "react";
 import { IoSearch } from "react-icons/io5";
 import { IoMdClose } from "react-icons/io";
 import { TbHeartbeat } from "react-icons/tb";
@@ -16,7 +15,7 @@ import { MdOutlineMonetizationOn } from "react-icons/md";
 import { popupContext } from "../../context/PopupContext";
 
 const Filter = () => {
-  const { opened, setOpened } = useContext(popupContext);
+  const { setOpened } = useContext(popupContext);
   const [selected, setSelected] = useState(["Real Estate"]);
   const choices1 = [
     "Choice 1",
@@ -229,7 +228,7 @@ const Filter = () => {
                     <p
                       key={index}
                       className={`choice1 my-2 cursor-pointer px-2 rounded-md text-gray-500 ${
-                        index == 4 ? `active1` : `null`
+                        index === 4 ? `active1` : `null`
                       }`}
                       onClick={(e) => {
                         document.querySelector(".picker-select1").scrollTo({
@@ -266,7 +265,7 @@ const Filter = () => {
                     <p
                       key={index}
                       className={`choice2 my-2 cursor-pointer px-2 rounded-md text-gray-500 ${
-                        index == 4 ? `active2` : `null`
+                        index === 4 ? `active2` : `null`
                       }`}
                       onClick={(e) => {
                         document.querySelector(".picker-select2").scrollTo({

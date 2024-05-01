@@ -5,7 +5,6 @@ import { popupContext } from "../../context/PopupContext";
 
 const Body = () => {
   const { opened, setOpened } = useContext(popupContext);
-  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth < 1024 && opened) {
@@ -13,15 +12,10 @@ const Body = () => {
       } else {
         setOpened(false);
       }
-      setWindowWidth(window.innerWidth);
     };
 
     window.addEventListener("resize", handleResize);
-
-    // return () => {
-    //   window.removeEventListener("resize", handleResize);
-    // };
-  }, [window.innerWidth]);
+  });
   return (
     <>
       <div className=" grid xl:grid-cols-3 lg:grid-cols-5 gap-2">
